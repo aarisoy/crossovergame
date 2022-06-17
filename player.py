@@ -25,4 +25,5 @@ class Player(Turtle):
     def moveRight(self):
         self.goto(self.xcor() + MOVE_DISTANCE, self.ycor())
         
-    
+    def refresh(self):
+        self.goto(0,-280)

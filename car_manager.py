@@ -9,7 +9,7 @@ MOVE_INCREMENT = 10
 class CarManager():
     def __init__(self):
         super().__init__()
-        self.cars = []
+        self.car_list = []
         self.createRandomCar()
 
     def createRandomCar(self):
@@ -19,8 +19,8 @@ class CarManager():
         new.shape("square")
         new.shapesize(stretch_wid=1, stretch_len=2)
         new.goto(x=280, y=random.randint(-230, +250))
-        self.cars.append(new)        
+        self.car_list.append(new)        
 
     def moveCars(self):
-        for car_index in range(0, len(self.cars)):
-            self.cars[car_index].goto(self.cars[car_index].xcor() - MOVE_INCREMENT, self.cars[car_index].ycor())
+        for car_index in range(0, len(self.car_list)):
+            self.car_list[car_index].goto(self.car_list[car_index].xcor() - MOVE_INCREMENT, self.car_list[car_index].ycor())
