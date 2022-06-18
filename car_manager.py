@@ -10,6 +10,7 @@ class CarManager():
     def __init__(self):
         super().__init__()
         self.car_list = []
+        self.movedist = MOVE_INCREMENT
         self.createRandomCar()
 
     def createRandomCar(self):
@@ -23,4 +24,9 @@ class CarManager():
 
     def moveCars(self):
         for car_index in range(0, len(self.car_list)):
-            self.car_list[car_index].goto(self.car_list[car_index].xcor() - MOVE_INCREMENT, self.car_list[car_index].ycor())
+            self.car_list[car_index].goto(self.car_list[car_index].xcor() - self.movedist, self.car_list[car_index].ycor())
+
+    def updateSpeed(self, flag):
+        self.movedist += MOVE_INCREMENT
+        flag = False
+        return flag
